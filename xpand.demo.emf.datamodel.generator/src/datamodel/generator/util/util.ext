@@ -1,0 +1,3 @@
+String timestamp() :
+JAVA datamodel.generator.util.TemplateUtils.timestamp();
+

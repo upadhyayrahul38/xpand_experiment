@@ -1,0 +1,7 @@
+import data;
+
+String className( Entity e ) :
+JAVA datamodel.generator.util.EntityHelper.className(data.Entity);
+
+String classFileName( Entity e ) :
+JAVA datamodel.generator.util.EntityHelper.classFileName(data.Entity);

@@ -1,0 +1,28 @@
+«IMPORT data»
+
+«EXTENSION templates::java»
+«EXTENSION datamodel::generator::util::util»
+«EXTENSION datamodel::generator::util::helper»
+
+«DEFINE Root FOR data::DataModel»
+«EXPAND Entity FOREACH entity»
+«ENDDEFINE»
+
+«DEFINE Entity FOR data::Entity»
+«FILE classFileName()»
+public abstract class «className()» {
+«FOREACH attribute AS a»
+// bad practice
+private «a.type» «a.name»;
+public void «a.setterName()» ( «a.type» value ) {
+   this.«a.name» = value;
+}
+
+public «a.type» «a.getterName()» () {
+  return this.«a.name»;
+}
+«ENDFOREACH»
+}
+«ENDFILE»
+«ENDDEFINE»
+

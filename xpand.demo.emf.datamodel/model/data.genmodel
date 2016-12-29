@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/xpand.demo.emf.datamodel/src" modelPluginID="xpand.demo.emf.datamodel"
+    modelName="Data" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>data.ecore</foreignModel>
+  <genPackages prefix="Data" disposableProviderFactory="true" ecorePackage="data.ecore#/">
+    <genClasses ecoreClass="data.ecore#//DataModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data.ecore#//DataModel/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference data.ecore#//DataModel/entity"/>
+    </genClasses>
+    <genClasses ecoreClass="data.ecore#//Entity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data.ecore#//Entity/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference data.ecore#//Entity/attribute"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference data.ecore#//Entity/reference"/>
+    </genClasses>
+    <genClasses ecoreClass="data.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data.ecore#//Attribute/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data.ecore#//Attribute/type"/>
+    </genClasses>
+    <genClasses ecoreClass="data.ecore#//EntityReference">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data.ecore#//EntityReference/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute data.ecore#//EntityReference/toMany"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference data.ecore#//EntityReference/target"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

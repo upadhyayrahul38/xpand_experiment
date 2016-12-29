@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data:DataModel
+ xmi:version="2.0" 
+ xmlns:xmi="http://www.omg.org/XMI" 
+ xmlns:data="http://www.xpand.org/xpand.demo.emf.datamodel" 
+ name="">
+  <entity name="Person">
+    <attribute name="name" type="String"/>
+    <reference name="cars" toMany="true" target="//@entity.1"/>
+  </entity>
+  <entity name="Vehicle">
+    <attribute name="plate" type="String"/>
+  </entity>
+</data:DataModel>

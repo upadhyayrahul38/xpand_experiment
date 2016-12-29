@@ -1,0 +1,8 @@
+import data;
+
+String setterName(Attribute ele) : 
+'set' + ele.name.toFirstUpper();
+
+String getterName(Attribute ele) : 
+'get' + ele.name.toFirstUpper();
+
