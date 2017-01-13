@@ -1,0 +1,71 @@
+<%@ jet package="com.conti.component.ui.templates"  imports=" architecturetool.* architecturetool.Runnable org.eclipse.emf.common.util.EList" class="PortHeadergenerator" %>
+<% Component component = (Component) argument; %>
+#ifndef <%=component.getName().toUpperCase()%>_MAIN_H_INCLUDED
+#define <%=component.getName().toUpperCase()%>_MAIN_H_INCLUDED
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+<%
+boolean hasRequestPort = false;
+boolean hasProviderPort = false;
+EList<Runnable> itsRunnable = component.getItsRunnable();
+for (Runnable runnable : itsRunnable) {%>
+<%EList<Port> port = component.getPort();
+    for (Port port2 : port) {%>
+    <%if(port2.getType().equals(PortListType.REQUEST)) {
+    	hasRequestPort = true;
+    } else {
+    	hasProviderPort = true;
+    }%>
+    <%}%>
+ <%}%>
+/*********************/
+/* request port list */
+/*********************/  
+<%
+for (Runnable runnable : itsRunnable) {%>
+typedef struct {
+    	<%EList<Port> port = component.getPort();
+    for (Port port2 : port) {%>
+<% if(port2.getParameter()!= null){%>
+if(<%=port2.getParameter().getName()%>> 0)
+
+<% if(port2.getName()==null){%><%=port2.getRef().getName()%> *p_<%=port2.getRef().getName()%><%} else {%><%=port2.getName()%> *p_<%=port2.getName()%><%}%>;
+#endif
+<%} else {%>
+<%if(port2.getType().equals(PortListType.REQUEST)) {%>const <% if(port2.getName()==null){%><%=port2.getRef().getName()%> *p_<%=port2.getRef().getName()%><%} else {%><%=port2.getName()%> *p_<%=port2.getName()%><%}%>
+<%}%>
+<%}%>
+	<%}%>
+    }<%=runnable.getName()%>_t_reqportPtrList;
+    <%}%>
+ 
+ <%if(hasProviderPort) {%>
+/*********************/
+/* provide port list */
+/*********************/
+<%
+for (Runnable runnable : itsRunnable) {%>
+typedef struct {
+    	<%EList<Port> port = component.getPort();
+    for (Port port2 : port) {%>
+<%if(port2.getType().equals(PortListType.PROVIDER)) {%>const <% if(port2.getName()==null){%><%=port2.getRef().getName()%> *p_<%=port2.getRef().getName()%><%} else {%> <%=port2.getName()%> *p_<%=port2.getName()%><%}%>
+	<%}%>
+	<%}%>
+    }<%=runnable.getName()%>_t_proportPtrList;
+     <%}%>
+<%}
+
+    for (Runnable runnable : itsRunnable) {%>
+    <%if(component.isExternalStaticMemUsed()) {%>
+void <%=runnable.getName()%> (<% if(hasRequestPort) {%><%=runnable.getName()%>_t_reqportPtrList const*const reqPort,<%}%> GS_t_SimInitDAP *const p_SimInit, GS_t_NonSimInitDAP *const p_NonSimInit<% if(hasProviderPort) { %>,<%=runnable.getName()%>_t_proportPtrList const*const proPort<% }%>);    	
+    <%} else {%>
+void <%=runnable.getName()%> (<% if(hasRequestPort) {%><%=runnable.getName()%>_t_reqportPtrList const*const reqPort, <%}%><% if(hasProviderPort) { %><%=runnable.getName()%>_t_proportPtrList const*const proPort<%}%>);
+    <%}%>
+
+	<%}%>
+	#ifdef __cplusplus
+}
+#endif
+#endif /*DAP_EXT_H_INCLUDED*/

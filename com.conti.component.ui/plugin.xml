@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="com.conti.component.ui.objectContribution1"
+            objectClass="architecturetool.Project">
+         <action
+               class="com.conti.component.ui.popup.ImportRhapsodyAction"
+               id="com.conti.component.ui.action1"
+               label="%action.label">
+         </action>
+         <action
+               class="com.conti.component.ui.popup.ImportHTMLAction"
+               id="com.conti.component.ui.action2"
+               label="%action.label.0">
+         </action>
+      </objectContribution>
+      <objectContribution
+            adaptable="false"
+            id="com.conti.component.ui.mccObjectContribution"
+            objectClass="architecturetool.MCC">
+         <action
+               class="com.conti.component.ui.popup.ImportComprReqFromRhapsodyAction"
+               id="com.conti.component.ui.popup.ImportComprReqFromRhapsodyAction"
+               label="Import CompReq from Rhapsody">
+         </action>
+      </objectContribution>
+      <objectContribution
+      adaptable="false"
+            id="com.conti.component.ui.mccObjectContribution"
+            objectClass="architecturetool.NoNameElement">
+       <action
+               class="com.conti.component.ui.popup.ImportECUInstancefromRhapsodyAction"
+               id="com.conti.component.ui.popup.ImportECUInstancefromRhapsodyAction"
+               label="Import Project from Rhapsody">
+         </action>
+      </objectContribution>
+      <objectContribution
+            adaptable="false"
+            id="com.conti.component.ui.objectContribution2"
+            objectClass="architecturetool.FunctionalRequirement">
+         <action
+               class="com.conti.component.ui.popup.ImportComponentInstanceFromRhapsodyAction"
+               id="com.conti.component.ui.action2"
+               label="Import Component Instance from Rhapsody">
+         </action>
+      </objectContribution>
+      <objectContribution
+            adaptable="false"
+            id="com.conti.component.ui.objectContribution1"
+            objectClass="architecturetool.ComponentInstance">
+         <action
+               class="com.conti.component.ui.popup.PushComponentInstanceAction"
+               id="com.conti.component.ui.action1"
+               label="Push to rhapsody">
+         </action>
+      </objectContribution>
+      <objectContribution
+            adaptable="false"
+            id="com.conti.component.ui.objectContribution1"
+            objectClass="architecturetool.Component">
+         <action
+               class="com.conti.component.ui.popup.GenerateHeaderfileAction"
+               id="com.conti.component.ui.action1"
+               label="Generate header File">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>

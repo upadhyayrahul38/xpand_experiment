@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.eclipse.emf.ecp.view.model:View xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:org.eclipse.emf.ecp.view.group.model="http://org/eclipse/emf/ecp/view/group/model" xmlns:org.eclipse.emf.ecp.view.model="http://org/eclipse/emf/ecp/view/model/170" xmlns:org.eclipse.emf.ecp.view.table.model="http://org/eclipse/emf/ecp/view/table/model/150" xmi:id="_RvJEALVnEeaSROluW2gw9A" name="FunctionalRequirement" ecorePath="/com.conti.component.model/model/component.ecore">
+  <rootEClass href="http://component/1.0#//FunctionalRequirement"/>
+  <children xsi:type="org.eclipse.emf.ecp.view.group.model:Group" xmi:id="_vWWZcLVnEeaSROluW2gw9A">
+    <children xsi:type="org.eclipse.emf.ecp.view.table.model:TableControl" xmi:id="_UGRTcLVnEeaSROluW2gw9A" detailEditing="WithDialog">
+      <domainModelReference xsi:type="org.eclipse.emf.ecp.view.table.model:TableDomainModelReference" xmi:id="_YLgqgLVnEeaSROluW2gw9A">
+        <columnDomainModelReferences xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_1ippwLYOEeaSROluW2gw9A">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://component/1.0#//ComponentInstance/name"/>
+        </columnDomainModelReferences>
+        <columnDomainModelReferences xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_2wdgsLYOEeaSROluW2gw9A">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://component/1.0#//ComponentInstance/ram"/>
+        </columnDomainModelReferences>
+        <columnDomainModelReferences xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_2wdgsbYOEeaSROluW2gw9A">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://component/1.0#//ComponentInstance/ramSection"/>
+        </columnDomainModelReferences>
+        <columnDomainModelReferences xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_2wdgsrYOEeaSROluW2gw9A">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://component/1.0#//ComponentInstance/rom"/>
+        </columnDomainModelReferences>
+        <columnDomainModelReferences xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_2wdgs7YOEeaSROluW2gw9A">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://component/1.0#//ComponentInstance/nmv"/>
+        </columnDomainModelReferences>
+        <columnDomainModelReferences xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_2wdgtLYOEeaSROluW2gw9A">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://component/1.0#//ComponentInstance/meas"/>
+        </columnDomainModelReferences>
+        <columnDomainModelReferences xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_2wdgtbYOEeaSROluW2gw9A">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://component/1.0#//ComponentInstance/type"/>
+        </columnDomainModelReferences>
+        <columnDomainModelReferences xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_2wdgtrYOEeaSROluW2gw9A">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://component/1.0#//ComponentInstance/owner"/>
+        </columnDomainModelReferences>
+        <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_YLgqgbVnEeaSROluW2gw9A">
+          <domainModelEFeature xsi:type="ecore:EReference" href="http://component/1.0#//FunctionalRequirement/componentinstance"/>
+        </domainModelReference>
+      </domainModelReference>
+    </children>
+  </children>
+</org.eclipse.emf.ecp.view.model:View>
